@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Smart Email Assistant",
+    "version": "1.0",
+    "description": "A smart assistant to summarize emails, generate replies, and more.",
+    "permissions": [
+        "storage",
+        "notifications",
+         "activeTab"
+    ],
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "https://mail.google.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://mail.google.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+  
